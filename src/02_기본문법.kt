@@ -32,12 +32,58 @@ import java.util.*
 //    모든 것은 객체이다.
 //    Int, Double, String, Char, Byte
 
+//    강력한 타입 제약이 존재한다.
+//    : '암묵적인 타입 변환'을 거의 허용하지 않습니다.
+
+//  3) 변수를 만드는 방법
+//     var: 변수(var, let)
+//       User user = new User();
+//       var user = User()
+//     val: 상수(let, const)
+//       final User user = new User()
+//       val user = User()
+
+// Statement(문) vs Expression(식)
+// 문: 결과가 존재하지 않습니다.
+// 식: 결과가 존재합니다.
 
 fun main(args: Array<String>) {
-    // println(println("hello"))
     val n: Int = 42
     val nl: Long = n.toLong()
 
+    val scanner = Scanner(System.`in`)
+    val input = scanner.nextInt()
+
+    /*
+    var result: String
+    if (input % 2 == 0) {
+        result = "짝"
+    } else {
+        result = "홀"
+    }
+    */
+    val result = if (input % 2 == 0) {
+        "짝"
+    } else {
+        "홀"
+    }
+    
+
+
+
+
+    /*
+    var p: Int? = null
+    if (p != null) {
+        p.toLong()
+    }
+    */
+
+    // println(println("hello"))
+    /*
+    val n: Int = 42
+    val nl: Long = n.toLong()
+    */
 }
 
 
