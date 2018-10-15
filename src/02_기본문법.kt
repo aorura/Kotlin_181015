@@ -18,11 +18,26 @@ import java.util.*
 //  void   ->    Unit
 // Object  ->    Any
 
-// 4.   
+// 4. 타입 시스템
+//   1) Java
+//    - Primitive Type(Value Type)
+//      int, double, char, float, byte
+//      * Collection에 저장할 수 없다.
+//      * 필드와 메소드를 가질 수 있다.
+//
+//    - Reference Type
+//      Integer, Double, Char, Float, String
+
+//  2) Kotlin
+//    모든 것은 객체이다.
+//    Int, Double, String, Char, Byte
 
 
 fun main(args: Array<String>) {
-    println(println("hello"))
+    // println(println("hello"))
+    val n: Int = 42
+    val nl: Long = n.toLong()
+
 }
 
 
