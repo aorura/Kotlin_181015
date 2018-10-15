@@ -37,6 +37,8 @@ public class User {
 //   필드와 접근자 메소드를 자동으로 생성해주는 문법입니다.
 package ex2
 
+import java.util.*
+
 /*
 class User {
     // var: getter + setter
@@ -84,7 +86,13 @@ class User(name: String, age: Int) {
     }
 
  */
+
+/*
 class User(var name: String, var age: Int) {
+    override fun hashCode(): Int {
+        return Objects.hash(age, name)
+    }
+
     override fun equals(other: Any?): Boolean {
         if (other === null)
             return false
@@ -100,12 +108,22 @@ class User(var name: String, var age: Int) {
                 other.name == name
     }
 }
+*/
 
+// DAO, DTO => data class로 설계하라
+data class User(var name: String,
+                var age: Int,
+                val address: String = "Suwon")
+
+/*
 fun main(args: Array<String>) {
     // 객체를 만드는 방법
     //  : new 키워드는 더 이상 사용하지 않습니다.
     val user1 = User("Tom", 42)
     val user2 = User("Tom", 42)
+
+    println(user1)
+    println(user2)
 
     // 동등성 판단
     //  1) 객체 동등성(equals) -> ==
@@ -125,7 +143,26 @@ fun main(args: Array<String>) {
     } else {
         println("Different object")
     }
+}
+*/
 
+// 기본 연산자
+fun main(args: Array<String>) {
+    // 2진수 리터럴 문법
+    // 1011
+    val n  = 0b1101
+    println(n.toString(2))
+
+    // Bit shift   <<(shl), >>(shr), >>>(ushr)
+    println(n shl 1)
+    println(n shr 2)
+    println(n ushr 3)
+
+    // Bit logical &(and), ~(not), ^(xor), |(or)
+    println(n and 0b1100)
+    println(n or 0b1100)
+    println(n xor 0b1100)
+    println(n.inv())
 }
 
 
