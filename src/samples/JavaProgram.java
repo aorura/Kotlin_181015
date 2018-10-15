@@ -1,7 +1,6 @@
 package samples;
 
-import ex2.User;
-
+/*
 public class JavaProgram {
     public static void main(String[] args) {
         // System.out.println(System.out.println());
@@ -11,3 +10,28 @@ public class JavaProgram {
 
     }
 }
+*/
+
+class User {
+    protected String name;
+}
+
+public class JavaProgram {
+    public static void main(String[] args) {
+        User user = new User();
+        // user.name = "Tom";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
