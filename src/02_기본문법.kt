@@ -36,12 +36,17 @@ import java.util.*
 //    : '암묵적인 타입 변환'을 거의 허용하지 않습니다.
 
 //  3) 변수를 만드는 방법
+//     : 타입 추론을 이용해 변수를 만듭니다.
 //     var: 변수(var, let)
 //       User user = new User();
 //       var user = User()
 //     val: 상수(let, const)
 //       final User user = new User()
 //       val user = User()
+//    * 암묵적인 타입 지정
+//     val user = new User()
+//    * 명시적인 타입 지정
+//     val user: User = new User()
 
 // Statement(문) vs Expression(식)
 // 문: 결과가 존재하지 않습니다.
@@ -67,10 +72,6 @@ fun main(args: Array<String>) {
     } else {
         "홀"
     }
-    
-
-
-
 
     /*
     var p: Int? = null
