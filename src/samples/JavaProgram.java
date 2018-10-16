@@ -223,7 +223,8 @@ public class JavaProgram {
 // 객체의 복제가 필요한 이유?
 
 
-import ex10.Cursor;
+
+import ex10.User;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -454,7 +455,10 @@ class Cursor {
 public class JavaProgram {
     public static void main(String[] args) throws Exception {
         // Cursor.INSTANCE.move();
-        Cursor.INSTANCE.move();
+        // Cursor.INSTANCE.move();
+
+        // User.Companion.className()
+        // User.Shared.className()
     }
 }
 
