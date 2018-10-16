@@ -223,6 +223,9 @@ public class JavaProgram {
 // 객체의 복제가 필요한 이유?
 
 
+import ex10.Cursor;
+
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -267,7 +270,7 @@ class Point implements Cloneable {
     private int y;
 
     @Override
-    public Point clone()  {
+    public Point clone() {
         try {
             return (Point) super.clone();
             /*
@@ -318,7 +321,7 @@ class Point implements Cloneable {
 //    }
 //}
 
-
+/*
 public class JavaProgram {
     public static void main(String[] args) {
         Point leftTop = new Point(10, 32);
@@ -340,12 +343,120 @@ public class JavaProgram {
 
     }
 }
+*/
+
+// Singleton: GoF's Design Pattern
+//   의도: 오직 한개의 객체를 생성하고, 언제 어디서든 동일한 방법으로
+//        접근할 수 있어야 한다.
+
+// 안전하지 않은 싱글톤
+//  1. Reflection
+//  2. Serialization
+
+/*
+class Cursor {
+    // 1. private 생성자
+    private Cursor() {
+
+    }
+
+    // 2. 오직 한개의 객체
+    private static final Cursor INSTANCE = new Cursor();
+
+    // 3. 정적 메소드
+    public static Cursor getInstance() {
+        return INSTANCE;
+    }
+}
+
+public class JavaProgram {
+    public static void main(String[] args) throws Exception {
+        Cursor c1 = Cursor.getInstance();
+        Cursor c2 = Cursor.getInstance();
+        System.out.println(c1);
+        System.out.println(c2);
+
+        Class clazz = Cursor.class;
+        Constructor constructor = clazz.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Cursor c3 = (Cursor) constructor.newInstance();
+
+        System.out.println(c3);
+    }
+}
+*/
+
+
+// Bloch's Singleton
+// => enum Singleton
+/*
+enum Cursor {
+    INSTANCE;
+
+    void move() {
+        System.out.println("Cursor move");
+    }
+}
+*/
+
+// 위의 싱글톤들은 프로그램 시작시 생성된다.
+// 프로그램 내부에 싱글톤이 많을 경우, 또는 싱글톤의 생성에 시간이 걸릴 경우
+// 프로그램 시작 속도에 악영향을 미친다.
+
+// Lazy Initialization Singleton
+/*
+class Cursor {
+    private Cursor() {}
+    private static Cursor sInstance = null;
+    // static final: 동시에 여러 개의 스레드가 생성하더라도 정상적으로 하나만 생성되는 것을
+    //               보장된다.
+
+    // Version 1
+    public synchronized static Cursor getInstance() {
+        if (sInstance == null)
+            sInstance = new Cursor();
+
+        return sInstance;
+    }
+
+    // Version 2 - DCLP(Double Check Locking Pattern)
+    //  문제점: 선언적이지 않다.
+    //   -> 메소드의 이름이랑 하는일이랑 차이가 있다.
+    public static Cursor getInstance() {
+        if (sInstance == null) {
+            synchronized (Cursor.class) {
+                if (sInstance == null)
+                    sInstance = new Cursor();
+            }
+        }
+
+        return sInstance;
+    }
+
+    // Idioms
+    //   언어가 가지고 있는 특성을 이용해서 문제를 해결하는 방식
+
+    // Version 3. IODH(Initialize on Demand Holder)
+    //  : 중첩 클래스를 이용한다.
+    //  JLS 표준: 중첩 클래스의 정적 필드는 처음 접근하는 시점에 로드한다.
+    static class Singleton {
+        private static final Cursor INSTANCE = new Cursor();
+    }
+
+    public static Cursor getInstance() {
+        return Singleton.INSTANCE;
+    }
+}
+*/
 
 
 
-
-
-
+public class JavaProgram {
+    public static void main(String[] args) throws Exception {
+        // Cursor.INSTANCE.move();
+        Cursor.INSTANCE.move();
+    }
+}
 
 
 
