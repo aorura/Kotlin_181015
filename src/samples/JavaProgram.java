@@ -185,6 +185,7 @@ public class JavaProgram {
 }
 */
 
+/*
 class User {
     private String name;
     private int age;
@@ -210,21 +211,135 @@ class User {
 
 public class JavaProgram {
     public static void main(String[] args) {
-        /*
         User.Foo obj = new User("Tom", 42)
                 .createFoo();
-        */
 
         User.Foo obj = new User.Foo();
 
     }
 }
+*/
+
+// 객체의 복제가 필요한 이유?
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+// Immutable Object
+class Rect {
+    private final Point leftTop;
+    private final Point rightBottom;
+
+    public Rect(Point leftTop, Point rightBottom) {
+        // 방어 복제본을 생성하는 코드
+        this.leftTop = leftTop.clone();
+        this.rightBottom = rightBottom.clone();
+    }
+
+    @Override
+    public String toString() {
+        return "Rect{" +
+                "leftTop=" + leftTop +
+                ", rightBottom=" + rightBottom +
+                '}';
+    }
+}
 
 
+// Object.clone()
+// 1. protected -> public 으로 변경해야 합니다.
+// 2. 예외를 메소드 안에서 처리해야 합니다.
+// 3. 공변 반환의 룰
+//    : 부모 메소드의 반환 타입을 하위 타입으로 변경하는 것을 허용한다.
+// 4. 내부적으로 캐스팅을 수행한다.
+
+// clone() 한계
+//  1. 만드는 것이 번거롭고 복잡하다.
+//  2. 특정 클래스의 하위 타입으로 만들었을 경우, 부모가 Cloneable 하지 않다면
+//     clone을 재정의할 수 없다.
+
+// - Clone() 보다는 '복사 생성자'를 고려하라.
+
+class Point implements Cloneable {
+    private int x;
+    private int y;
+
+    @Override
+    public Point clone()  {
+        try {
+            return (Point) super.clone();
+            /*
+            // check up interface
+            if (!(this instanceOf Cloneable))
+                throw new CloneNotSupportedException();
+            */
+
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    // 복사 생성자를 고려해라.
+    public Point(Point rhs) {
+        this.x = rhs.x;
+        this.y = rhs.y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+}
+
+//public class JavaProgram {
+//    public static void main(String[] args) {
+//        Point p1 = new Point(10, 32);
+//        Point p2 = p1.clone();
+//
+//        System.out.println(p1);
+//        System.out.println(p2);
+//
+//    }
+//}
 
 
+public class JavaProgram {
+    public static void main(String[] args) {
+        Point leftTop = new Point(10, 32);
+        Point rightBottom = new Point(30, 100);
+
+        Rect rect = new Rect(leftTop, rightBottom);
+        leftTop.setX(1000);
+
+        System.out.println(rect);
+
+//        List<String> list = new ArrayList<>();
+//        list.add("Tom");
+//        list.add("Bob");
+
+                            // listOf
+        List<String> list = Arrays.asList("Tom", "Bob");
+        System.out.println(list.get(0));
+        //                 list[0]
+
+    }
+}
 
 
 

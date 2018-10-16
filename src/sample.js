@@ -1,3 +1,23 @@
+// ECMA 2016-2018
+const user = {
+	name: "Tom",
+	age: 42,
+};
+
+/*
+const name = user.name;
+const age = user.age;
+*/
+
+const { name, age } = user;
+console.log(name);
+console.log(age);
+
+
+
+
+
+/*
 const n = 42;
 
 const result = (function(){
@@ -9,6 +29,7 @@ const result = (function(){
 })();
 
 console.log(result);
+*/
 
 /*
 let result;

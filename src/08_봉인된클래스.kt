@@ -60,11 +60,14 @@ fun mix(c1: Color, c2: Color): Color {
     }
 }
 
-
 fun main(args: Array<String>) {
     println(Color.RED)
     println(Color.RED.r)
     println(Color.RED.rgb())
+
+    println(getName(Color.RED))
+    println(getWarmth(Color.RED))
+    println(mix(Color.RED, Color.YELLOW))
 }
 
 
