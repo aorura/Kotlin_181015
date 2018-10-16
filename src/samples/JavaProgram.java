@@ -232,6 +232,8 @@ import ex10.OnClickListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -474,6 +476,11 @@ public class JavaProgram {
             }
         });
 
+        // Java 7 - JodaTime
+        // Java 8 - New Date API
+        //    : LocalDate, LocalDateTime
+        System.out.println(LocalDate.now());
+        System.out.println(LocalDateTime.now());
     }
 }
 
