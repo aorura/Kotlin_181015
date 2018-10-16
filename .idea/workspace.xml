@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5caee705-6bef-4518-b3f0-a4ace4ec8628" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/META-INF/Kotlin_181015.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/META-INF/Kotlin_181015.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/Dialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/Dialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/OnClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/OnClickListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/_10_objectKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/ex10/_10_objectKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/JavaProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/JavaProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/Rect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kotlin_181015/samples/Rect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/11_위임2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/11_위임2.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,92 +16,49 @@
     <session id="-738400261">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="dat" value="1" />
           <entry key="java" value="6" />
-          <entry key="kt" value="22" />
+          <entry key="kt" value="23" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="6" />
-          <entry key="Kotlin" value="22" />
+          <entry key="Kotlin" value="23" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="6288" />
-          <entry key="kt" value="24057" />
+          <entry key="kt" value="25009" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="6288" />
-          <entry key="Kotlin" value="24057" />
+          <entry key="Kotlin" value="25009" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/samples/JavaProgram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="483" column="5" lean-forward="true" selection-start-line="483" selection-start-column="5" selection-end-line="483" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5160#5161#0" expanded="true" />
-                <element signature="e#5186#5187#0" expanded="true" />
-                <element signature="e#9485#9486#0" expanded="true" />
-                <element signature="e#9531#9532#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/10_object.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="145" selection-start-line="145" selection-end-line="145" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/10_object2.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/11_위임.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="39" column="25" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/11_위임2.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+            <state relative-caret-position="366">
+              <caret line="162" selection-start-line="162" selection-end-line="162" />
               <folding>
                 <element signature="e#14#80#0" expanded="true" />
               </folding>
@@ -117,19 +67,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/07_클래스문법고급3.kt">
+        <entry file="file://$PROJECT_DIR$/src/11_위임.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/02_기본문법2.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2147">
-              <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
+            <state relative-caret-position="287">
+              <caret line="50" column="45" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -176,11 +117,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1270" />
-    <option name="y" value="229" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1280" />
+    <option name="y" value="-59" />
     <option name="width" value="1280" />
-    <option name="height" value="803" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -190,8 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,6 +153,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,7 +270,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="160" y="23" width="1280" height="803" extended-state="0" />
+    <frame x="-1280" y="-59" width="1280" height="1001" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
@@ -339,7 +280,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41631505" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32563257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -421,20 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/07_클래스문법고급3.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/02_기본문법2.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2147">
-          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Cloneable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -486,43 +413,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/samples/JavaProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="483" column="5" lean-forward="true" selection-start-line="483" selection-start-column="5" selection-end-line="483" selection-end-column="5" />
+        <state relative-caret-position="8911">
+          <caret line="483" column="5" selection-start-line="483" selection-start-column="5" selection-end-line="483" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="e#5186#5187#0" expanded="true" />
-            <element signature="e#9485#9486#0" expanded="true" />
-            <element signature="e#9531#9532#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/10_object.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="2755">
           <caret line="145" selection-start-line="145" selection-end-line="145" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/10_object2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        <state relative-caret-position="1900">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/07_클래스문법고급3.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/02_기본문법2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
+          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/11_위임.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="287">
+          <caret line="50" column="45" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/11_위임2.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="97" column="22" lean-forward="true" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+        <state relative-caret-position="366">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
           <folding>
             <element signature="e#14#80#0" expanded="true" />
           </folding>

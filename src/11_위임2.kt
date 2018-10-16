@@ -73,6 +73,7 @@ fun main(args: Array<String>) {
 //   : iOS 에서 많이 사용하는 기술
 //  => 프로퍼티의 값이 변경되는 것을 통보 받는 기술
 
+/*
 // View
 class TextView {
     var text: String = ""
@@ -116,6 +117,69 @@ fun main(args: Array<String>) {
 class Model {
     var name: String = ""
 }
+*/
+
+/*
+// 3. KVC - Key value coding
+// Map<String, Any> : JSON
+
+// Json serializer: Gson
+
+// REST API Client
+//     OkHttp + Gson + Retrofit + RxJava
+
+class User(map: Map<String, Any>) {
+    val name: String by map
+    val age: Int by map
+    val address: String by map
+
+    // 초기화 블록의 코드는 프로퍼티가 변경될 때마다 수정되어야 한다.
+    /*
+    init {
+        name = map["name"] as String
+        age = map["age"] as Int
+    }
+    */
+
+    override fun toString(): String {
+        return "User(name='$name', age=$age, address=$address)"
+    }
+}
+
+fun main(args: Array<String>) {
+    val userJson = mapOf("name" to "Tom", "age" to 42, "address" to "Suwon")
+    val user = User(userJson)
+    println(user)
+}
+*/
+
+// 4. vetoable: 프로퍼티가 설정한 조건이 부합되지 않으면, 값이 변경되지 않음
+class User {
+    var name by Delegates.vetoable("")
+    { _, old, new ->
+        old != new && new.length >= 5
+    }
+}
+
+fun main(args: Array<String>) {
+    val user = User()
+    user.name = "Tom123"
+
+    println(user.name)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
