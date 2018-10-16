@@ -1,38 +1,38 @@
 package ex9
 
-class User(val name: String, val age: Int) {
-    override fun toString(): String {
-        return "User(name=$name, age=$age)"
-    }
+//class User(val name: String, val age: Int) {
+//    override fun toString(): String {
+//        return "User(name=$name, age=$age)"
+//    }
+//
+//    override fun equals(other: Any?): Boolean {
+//        if (this === other) return true
+//        if (javaClass != other?.javaClass) return false
+//
+//        other as User
+//
+//        if (name != other.name) return false
+//        if (age != other.age) return false
+//
+//        return true
+//    }
+//
+//    override fun hashCode(): Int {
+//        var result = name.hashCode()
+//        result = 31 * result + age
+//        return result
+//    }
+//
+//    operator fun component1(): String {
+//        return name
+//    }
+//
+//    operator fun component2(): Int {
+//        return age
+//    }
+//}
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as User
-
-        if (name != other.name) return false
-        if (age != other.age) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = name.hashCode()
-        result = 31 * result + age
-        return result
-    }
-
-    operator fun component1(): String {
-        return name
-    }
-
-    operator fun component2(): Int {
-        return age
-    }
-}
-
-// data class User(val name: String, val age: Int)
+data class User(val name: String, val age: Int)
 
 fun main(args: Array<String>) {
     val user = User("Tom", 42)
@@ -60,7 +60,7 @@ fun main(args: Array<String>) {
 
     val users = listOf(user, other)
     // users[0]
-    
+
     // (component1, component2)
 
     for ((name, age) in users) {
