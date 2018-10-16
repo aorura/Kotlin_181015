@@ -224,7 +224,12 @@ public class JavaProgram {
 
 
 
-import ex10.User;
+
+
+import ex10.Button;
+import ex10.Dialog;
+import ex10.OnClickListener;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -459,6 +464,16 @@ public class JavaProgram {
 
         // User.Companion.className()
         // User.Shared.className()
+        Dialog dialog = new Dialog();
+
+        Button button = new Button(100);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(@NotNull Button view) {
+                dialog.close();
+            }
+        });
+
     }
 }
 
