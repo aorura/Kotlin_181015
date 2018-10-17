@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5caee705-6bef-4518-b3f0-a4ace4ec8628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/13_확장함수.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/13_확장함수.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,38 +27,50 @@
         <counts>
           <entry key="dat" value="1" />
           <entry key="java" value="6" />
-          <entry key="kt" value="26" />
+          <entry key="kt" value="27" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="6" />
-          <entry key="Kotlin" value="26" />
+          <entry key="Kotlin" value="27" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="6288" />
-          <entry key="kt" value="28290" />
+          <entry key="kt" value="29425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="6288" />
-          <entry key="Kotlin" value="28290" />
+          <entry key="Kotlin" value="29425" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/13_확장함수.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+            <state relative-caret-position="1238">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/13_확장함수2.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+              <folding>
+                <element signature="e#48#90#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/11_위임2.kt" />
         <option value="$PROJECT_DIR$/src/12_함수형프로그래밍.kt" />
         <option value="$PROJECT_DIR$/src/13_확장함수.kt" />
+        <option value="$PROJECT_DIR$/src/13_확장함수2.kt" />
       </list>
     </option>
   </component>
@@ -161,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ex13._13_확장함수Kt">
+  <component name="RunManager" selected="Kotlin.ex14._13_확장함수2Kt">
     <configuration name="JavaProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="samples.JavaProgram" />
       <module name="Kotlin_181015" />
@@ -183,19 +195,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="_12_함수형프로그래밍Kt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ex10._10_objectKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="Kotlin_181015" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ex10._10_objectKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -227,20 +226,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ex14._13_확장함수2Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="Kotlin_181015" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="ex14._13_확장함수2Kt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.JavaProgram" />
-      <item itemvalue="Kotlin.ex10._10_objectKt" />
       <item itemvalue="Kotlin.ex11._11_위임2Kt" />
       <item itemvalue="Kotlin._12_함수형프로그래밍Kt" />
       <item itemvalue="Kotlin.ex13._13_확장함수Kt" />
+      <item itemvalue="Kotlin.ex14._13_확장함수2Kt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ex14._13_확장함수2Kt" />
         <item itemvalue="Kotlin.ex13._13_확장함수Kt" />
         <item itemvalue="Kotlin._12_함수형프로그래밍Kt" />
         <item itemvalue="Kotlin.ex11._11_위임2Kt" />
         <item itemvalue="Application.JavaProgram" />
-        <item itemvalue="Kotlin.ex10._10_objectKt" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +277,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32563257" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32563257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -273,7 +285,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32893288" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32893288" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -467,8 +479,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/13_확장함수.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        <state relative-caret-position="1238">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/13_확장함수2.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#48#90#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

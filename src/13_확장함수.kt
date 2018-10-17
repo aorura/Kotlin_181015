@@ -41,6 +41,7 @@ fun String.lastChar(): Char = this[this.length - 1]
 // joinToString(s, ",", "[", "]")
 // -> "[ hello, world, show, me ]"
 
+/*
 fun <T> Collection<T>.joinToString(   // collection: Collection<T>,
         seperator: String = ",",
         prefix: String = "[",
@@ -57,7 +58,25 @@ fun <T> Collection<T>.joinToString(   // collection: Collection<T>,
     result.append(postfix)
     return result.toString()
 }
+*/
 
+// Collection<String>에 대해서만 확장하고 싶다. - C++ 부분 전문화
+fun Collection<String>.joinToString(   // collection: Collection<T>,
+        seperator: String = ",",
+        prefix: String = "[",
+        postfix: String = "]"): String {
+
+    val result = StringBuilder(prefix)
+
+    for ((index, element) in this.withIndex()) {
+        if (index > 0)
+            result.append(seperator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+    return result.toString()
+}
 
 fun main(args: Array<String>) {
     val v = listOf("Hello", "Show", "me", "Money")
