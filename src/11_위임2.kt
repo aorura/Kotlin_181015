@@ -119,7 +119,7 @@ class Model {
 }
 */
 
-/*
+
 // 3. KVC - Key value coding
 // Map<String, Any> : JSON
 
@@ -147,13 +147,14 @@ class User(map: Map<String, Any>) {
 }
 
 fun main(args: Array<String>) {
-    val userJson = mapOf("name" to "Tom", "age" to 42, "address" to "Suwon")
+    val userJson = mapOf("name2" to "Tom", "age" to 42, "address" to "Suwon")
     val user = User(userJson)
     println(user)
 }
-*/
+
 
 // 4. vetoable: 프로퍼티가 설정한 조건이 부합되지 않으면, 값이 변경되지 않음
+/*
 class User {
     var name by Delegates.vetoable("")
     { _, old, new ->
@@ -167,7 +168,7 @@ fun main(args: Array<String>) {
 
     println(user.name)
 }
-
+*/
 
 
 
