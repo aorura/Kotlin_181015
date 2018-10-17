@@ -62,6 +62,7 @@ fun <T> joinToString(collection: Collection<T>,
 fun main(args: Array<String>) {
     val v = listOf("Hello", "Show", "me", "Money")
     val result = joinToString(v, ", ", "[", "]")
+    // v.joinToString(v)
     println(result)
 
     val s = "Hello"
