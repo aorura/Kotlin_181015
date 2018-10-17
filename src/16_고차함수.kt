@@ -2,11 +2,14 @@ package ex16
 
 import java.util.function.Predicate
 
+// import java.util.function.Predicate
+
 // 고차 함수(Higher order function)
 // : 함수의 객체를 인자로 받거나 함수를 반환하는 함수
 
 // Why?
 // 1) 다양한 시나리오에서 동작하는 함수의 코드 중복을 없앨 수 있다.
+//   => 함수를 정책으로 사용할 수 있다.
 
 
 // 고차 함수의 방식을 자바에서 구현하는 방법
@@ -92,6 +95,7 @@ class EvenPredicate : Predicate<Int> {
     override fun test(e: Int) = e % 2 == 0
 }
 */
+
 object EvenPredicate : Predicate<Int> {
     override fun test(e: Int) = e % 2 == 0
 }
@@ -115,9 +119,21 @@ fun main(args: Array<String>) {
     println(result)
 
     // e 가 5 이상만 filter 하고 싶다.
+    // - Kotlin에서 인터페이스 기반의 정책을 사용하면, 람다를 사용할 수 없습니다.
+
+    // 만약 코틀린에서 자바의 Functional Interface를 정책으로 사용하고 있다면,
+    // '람다'를 사용하는 것을 허용합니다.
+    //  => SAM(Single Abstract Method)
+
     result = filter(data, object: Predicate<Int> {
-        override fun test(t: Int) = t >= 5
+        override fun test(e: Int) = e >= 5
     })
+
+    // SAM 변환
+    result = filter(data, Predicate { e -> e >= 5 })
+
+    // result = filter(data) { it >= 5 }
+
     println(result)
 }
 

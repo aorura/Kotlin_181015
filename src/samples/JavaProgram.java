@@ -502,6 +502,9 @@ interface Predicate<E> {
     // void foo();
 }
 
+// * Retro Lambda: 안드로이드에서도 람다를 사용할 수 있도록 해주던 3rd 파티 라이브러리 - X
+// * Android 에서도 Java 8의 람다를 사용할 수 있습니다.
+
 public class JavaProgram {
     static List<Integer> filter(List<Integer> data, Predicate<Integer> predicate) {
         List<Integer> result = new ArrayList<>();
