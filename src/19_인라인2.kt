@@ -61,8 +61,6 @@ open class Activity : Context() {
     fun create() {
         // ...
         onCreate()
-
-
     }
 }
 
