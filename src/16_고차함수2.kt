@@ -5,7 +5,6 @@ package ex162
 //  => 기존 자바에서는 함수를 전달할 수 없었다.
 
 // 2) Kotlin - Function 기반의 전략 전달
-
 fun filter(data: List<Int>, predicate: (Int) -> Boolean): List<Int> {
     val result = mutableListOf<Int>()
     for (e in data) {
@@ -68,10 +67,5 @@ fun main(args: Array<String>) {
 
     // 람다의 인자가 1개 라면, it 로 참조할 수 있습니다.
     result = filter(data) { it >= 5 }
-
-
-
-
     println(result)
-
 }

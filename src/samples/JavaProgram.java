@@ -223,21 +223,10 @@ public class JavaProgram {
 // 객체의 복제가 필요한 이유?
 
 
-
-
-
-import ex10.Button;
-import ex10.Dialog;
-import ex10.OnClickListener;
-import org.jetbrains.annotations.NotNull;
-
-import java.lang.reflect.Constructor;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+// import java.util.function.Predicate;
 
 // Immutable Object
 class Rect {
@@ -486,6 +475,7 @@ public class JavaProgram {
 }
 */
 
+/*
 public class JavaProgram {
     public static void main(String[] args) throws Exception {
         List<Integer> s = new ArrayList<>();
@@ -501,6 +491,76 @@ public class JavaProgram {
 //        s.add(30);
     }
 }
+*/
+
+// 람다를 사용하기 위해서는 인터페이스에 오직 하나의 메소드만
+// 존재해야 한다. - Functional Interface
+@FunctionalInterface
+interface Predicate<E> {
+    boolean test(E e);
+
+    // void foo();
+}
+
+public class JavaProgram {
+    static List<Integer> filter(List<Integer> data, Predicate<Integer> predicate) {
+        List<Integer> result = new ArrayList<>();
+        for (Integer e : data) {
+            if (predicate.test(e)) {
+                result.add(e);
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) throws Exception {
+        List<Integer> data = Arrays.asList(10, 20, 30, 40, 50);
+
+        List<Integer> result;
+        // 정책을 익명의 클래스로 전달하는 방법
+        //  Java Lambda: 익명의 클래스를 통해 정책을 전달하는 방법을 대체한다.
+        //  : 별도의 class 파일을 생성하지 않는다.
+
+        // 람다의 한계!
+
+        result = filter(data, (Integer e) -> {
+            return e % 2 == 0;
+        });
+        System.out.println(result);
+
+        result = filter(data, e -> e % 2 == 0);
+        System.out.println(result);
+
+        result = filter(data, integer -> integer > 20);
+        System.out.println(result);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
