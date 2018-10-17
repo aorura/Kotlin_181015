@@ -236,6 +236,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 // Immutable Object
@@ -458,7 +459,7 @@ class Cursor {
 */
 
 
-
+/*
 public class JavaProgram {
     public static void main(String[] args) throws Exception {
         // Cursor.INSTANCE.move();
@@ -483,9 +484,23 @@ public class JavaProgram {
         System.out.println(LocalDateTime.now());
     }
 }
+*/
 
+public class JavaProgram {
+    public static void main(String[] args) throws Exception {
+        List<Integer> s = new ArrayList<>();
 
+        // Immutable Collection을 만드는 방법
+        //  : Decorator Pattern
+        //   -> 실행 시간에 새로운 기능을 객체에 추가하는 방법
 
+        // s = Collections.unmodifiableList(s);
+        // s.add(10);
+
+//        s.add(20);
+//        s.add(30);
+    }
+}
 
 
 
