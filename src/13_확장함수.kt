@@ -41,14 +41,14 @@ fun String.lastChar(): Char = this[this.length - 1]
 // joinToString(s, ",", "[", "]")
 // -> "[ hello, world, show, me ]"
 
-fun <T> joinToString(collection: Collection<T>,
-                     seperator: String,
-                     prefix: String,
-                     postfix: String): String {
+fun <T> Collection<T>.joinToString(   // collection: Collection<T>,
+        seperator: String = ",",
+        prefix: String = "[",
+        postfix: String = "]"): String {
 
     val result = StringBuilder(prefix)
 
-    for ((index, element) in collection.withIndex()) {
+    for ((index, element) in this.withIndex()) {
         if (index > 0)
             result.append(seperator)
         result.append(element)
@@ -61,8 +61,8 @@ fun <T> joinToString(collection: Collection<T>,
 
 fun main(args: Array<String>) {
     val v = listOf("Hello", "Show", "me", "Money")
-    val result = joinToString(v, ", ", "[", "]")
-    // v.joinToString(v)
+    // val result = joinToString(v, ", ", "[", "]")
+    val result = v.joinToString()
     println(result)
 
     val s = "Hello"
