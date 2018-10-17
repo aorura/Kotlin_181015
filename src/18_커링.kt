@@ -92,6 +92,10 @@ fun main(args: Array<String>) {
     */
 }
 
+// Refactoring(마틴 파울러) 2판
+// 1판: Java
+// 2판: Javascript
+//     함수형 사고
 
 
 
