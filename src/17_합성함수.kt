@@ -38,6 +38,8 @@ fun main(args: Array<String>) {
     val s = "Hello"
     val f = String::length
     val g = Any::hashCode
+
+    // bound reference
     // val f = s::length
 
     // val fog = compose(f, g)
@@ -48,11 +50,6 @@ fun main(args: Array<String>) {
     for (e in inputs) {
         println(fog(e))
     }
-
-
-    // bound reference
-
-
 }
 
 
