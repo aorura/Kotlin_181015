@@ -233,6 +233,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 // import java.util.function.Predicate;
 
 // Immutable Object
@@ -551,6 +553,7 @@ public class JavaProgram {
 */
 
 
+/*
 public class JavaProgram {
     public static void main(String[] args) throws Exception {
         try (MyResource resource = new MyResource()) {
@@ -584,6 +587,45 @@ public class JavaProgram {
 
     }
 }
+*/
+
+
+public class JavaProgram {
+    public static void main(String[] args) throws Exception {
+        List<Integer> list = Arrays.asList(10, 20, 30, 40, 50);
+
+        // ctrl + alt + s: Settings
+        // IntelliJ(Android Studio) - Stream Debugger
+//        List<Integer> result = list.stream()
+//                .map(e -> e * 10)
+//                .filter(e -> e % 8 == 0)
+//                .collect(Collectors.toList());
+
+        // Thread에 의한 병렬 프로그래밍이 아닌
+        // Task에 의한 병렬 프로그래밍
+
+        // 컬렉션을 처리하는 각각의 연산이 병렬 처리 됩니다.
+        List<Integer> result = list.parallelStream()
+                .map(e -> e * 10)
+                .filter(e -> e % 8 == 0)
+                .collect(Collectors.toList());
+
+        for (Integer e : result)
+            System.out.println(e);
+    }
+}
+
+// Github API 연동하는 간단한 앱
+//   => OAuth 연동
+
+// 1) 기존의 자바 프로그램을 코틀린 기반으로 변경하는 방법
+
+
+
+
+
+
+
 
 
 

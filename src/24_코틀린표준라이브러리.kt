@@ -229,7 +229,7 @@ fun main(args: Array<String>) {
 }
 */
 
-
+/*
 // zip
 //  : 두 컬렉션 내의 자료들을 조합해서 새로운 자료를 만듭니다.
 fun main(args: Array<String>) {
@@ -247,6 +247,9 @@ fun main(args: Array<String>) {
         println(it)
     }
 }
+*/
+
+
 
 
 
