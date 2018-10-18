@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5caee705-6bef-4518-b3f0-a4ace4ec8628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/24_코틀린표준라이브러리.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/24_코틀린표준라이브러리.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/samples/JavaProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/samples/JavaProgram.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,7 +15,7 @@
     <session id="-738400261">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="2" />
@@ -140,8 +138,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/samples/JavaProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="619" lean-forward="true" selection-start-line="619" selection-end-line="619" />
+            <state relative-caret-position="438">
+              <caret line="621" lean-forward="true" selection-start-line="621" selection-end-line="621" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -764,8 +762,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/samples/JavaProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="619" lean-forward="true" selection-start-line="619" selection-end-line="619" />
+        <state relative-caret-position="438">
+          <caret line="621" lean-forward="true" selection-start-line="621" selection-end-line="621" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
