@@ -223,6 +223,13 @@ public class JavaProgram {
 // 객체의 복제가 필요한 이유?
 
 
+import ex23.MyResource;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -230,6 +237,7 @@ import java.util.List;
 
 // Immutable Object
 class Rect {
+
     private final Point leftTop;
     private final Point rightBottom;
 
@@ -504,7 +512,7 @@ interface Predicate<E> {
 
 // * Retro Lambda: 안드로이드에서도 람다를 사용할 수 있도록 해주던 3rd 파티 라이브러리 - X
 // * Android 에서도 Java 8의 람다를 사용할 수 있습니다.
-
+/*
 public class JavaProgram {
     static List<Integer> filter(List<Integer> data, Predicate<Integer> predicate) {
         List<Integer> result = new ArrayList<>();
@@ -540,17 +548,42 @@ public class JavaProgram {
 
     }
 }
+*/
+
+
+public class JavaProgram {
+    public static void main(String[] args) throws Exception {
+        try (MyResource resource = new MyResource()) {
+
+        }
+
+        // MyResource resource = new MyResource();
 
 
 
+        ServerSocket serverSocket = new ServerSocket(5000);
+        Socket socket = serverSocket.accept();
 
+        // Try with Resource 문법: Java 7에 추가되었습니다.
+        try (InputStream is = socket.getInputStream();
+             OutputStream os = socket.getOutputStream()) {
 
+            byte[] buf = new byte[1024];
+            while (true) {
+                int len = is.read(buf);
+                if (len == -1) {
+                    break;
+                }
 
+                os.write(buf, 0, len);
+            }
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-
-
-
+    }
+}
 
 
 
