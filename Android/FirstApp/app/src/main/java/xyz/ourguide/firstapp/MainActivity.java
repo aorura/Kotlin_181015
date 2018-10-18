@@ -2,6 +2,8 @@ package xyz.ourguide.firstapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 // 기존 안드로이드 프로젝트에서 코틀린 지원 추가
 //   : gradle
@@ -22,11 +24,35 @@ import android.os.Bundle;
 //        main.java.srcDirs += 'src/main/kotlin'
 //    }
 
-public class MainActivity extends AppCompatActivity {
+//public class MainActivity extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        Button nextButton = findViewById(R.id.button_next);
+//        nextButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//
+//    }
+//}
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
