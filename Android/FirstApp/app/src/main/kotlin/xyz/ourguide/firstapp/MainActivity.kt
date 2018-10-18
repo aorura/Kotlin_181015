@@ -17,10 +17,9 @@ import android.widget.Toast
 //  코드에서 쓸 수 있는 이름을 정확하게 지정해야 합니다.
 
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.alert
+import org.jetbrains.anko.*
+import org.jetbrains.anko.appcompat.v7.Appcompat
 import org.jetbrains.anko.design.snackbar
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.toast
 
 // Kotlin - DSL(Domain Specific Language)
 //   : 도메인 특화 언어
@@ -38,7 +37,46 @@ import org.jetbrains.anko.toast
 //   Kotlin 1.2
 //    Coroutine - Experimental
 
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
+        val married = listOf("미혼", "기혼", "이혼")
+        testButton.setOnClickListener { _ ->
+
+            // Selector Dialog로 제공합니다.
+            selector(title = "결혼 여부", items = married) { _, selectedIndex ->
+                toast(married[selectedIndex])
+            }
+
+        }
+
+        nextButton.setOnClickListener {
+            // startActivity<SignInActivity>()
+
+            // email / password
+            /*
+            val intent = intentFor<SignInActivity>(
+                    "email" to "chansik.yun@gmail.com",
+                    "password" to "linux123"
+            )
+            startActivity(intent)
+            */
+
+            startActivity<SignInActivity>(
+//                    "email" to "chansik.yun@gmail.com",
+//                    "password" to "linux123"
+            )
+
+        }
+
+    }
+}
+
+
+// Alert Dialog를 Anko를 이용해 사용하는 방법
+/*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +88,7 @@ class MainActivity : AppCompatActivity() {
             // Anko
             // alert(title = "Title", message = "Hello, Kotlin").show()
 
-            alert(title = "Title", message = "Hello, Kotlin") {
-
+            alert(Appcompat, title = "Title", message = "Hello, Kotlin") {
                 positiveButton("확인") {
                     toast("확인")
                 }
@@ -61,6 +98,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }.show()
+
+            /*
+            alert(title = "Title", message = "Hello, Kotlin") {
+                positiveButton("확인") {
+                    toast("확인")
+                }
+
+                negativeButton("취소") {
+                    toast("취소")
+                }
+
+            }.show()
+            */
 
         }
 
@@ -93,7 +143,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
+*/
 
 fun Context.myToast(message: CharSequence): Toast = Toast.makeText(this,
         message, Toast.LENGTH_SHORT).apply {
