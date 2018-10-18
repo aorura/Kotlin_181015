@@ -28,33 +28,36 @@ import butterknife.ButterKnife;
 //        main.java.srcDirs += 'src/main/kotlin'
 //    }
 
+// 5. kotlin-extension
+//   module 레벨의 build.gradle에 kotlin-android-extensions를 적용합니다.
+
 // findById의 Boilerplate 없애는 프로젝트 - Butter Knife
 
-public class MainActivity extends AppCompatActivity {
-
-    @BindView(R.id.button_next) Button nextButton;
-    @BindView(R.id.name_text) TextView nameTextView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //---------------------------
-        ButterKnife.bind(this);
-        //---------------------------
-
-//        Button nextButton = findViewById(R.id.button_next);
-//        final TextView nameTextView = findViewById(R.id.name_text);
-
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                nameTextView.setText("Hello, Android");
-            }
-        });
-
-    }
-}
+//public class MainActivity extends AppCompatActivity {
+//
+//    @BindView(R.id.button_next) Button nextButton;
+//    @BindView(R.id.name_text) TextView nameTextView;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//        //---------------------------
+//        ButterKnife.bind(this);
+//        //---------------------------
+//
+////        Button nextButton = findViewById(R.id.button_next);
+////        final TextView nameTextView = findViewById(R.id.name_text);
+//
+//        nextButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                nameTextView.setText("Hello, Android");
+//            }
+//        });
+//
+//    }
+//}
 
 
 

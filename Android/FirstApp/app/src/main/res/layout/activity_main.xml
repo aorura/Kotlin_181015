@@ -9,7 +9,7 @@
 
     <!--android:id="@+id/nextButton"-->
     <Button
-        android:id="@+id/button_next"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="51dp"
         android:text="Next"
@@ -20,7 +20,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/name_text"
+        android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,6 +29,6 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_next" />
+        app:layout_constraintTop_toBottomOf="@+id/nextButton" />
 
 </android.support.constraint.ConstraintLayout>
