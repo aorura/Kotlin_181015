@@ -48,6 +48,8 @@ dependencies {
 
     // Anko
     implementation 'org.jetbrains.anko:anko:0.10.7'
+    implementation 'org.jetbrains.anko:anko-design:0.10.7'
+
 
     // Unit Test
     testImplementation 'junit:junit:4.12'

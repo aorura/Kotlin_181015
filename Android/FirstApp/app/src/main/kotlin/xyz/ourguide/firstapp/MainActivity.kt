@@ -16,6 +16,7 @@ import android.widget.Toast
 //  코드에서 쓸 수 있는 이름을 정확하게 지정해야 합니다.
 
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
@@ -65,10 +66,15 @@ class MainActivity : AppCompatActivity() {
             snackbar.show()
             */
 
-            
+            // Context.snackbar
+            // snackbar(rootView, "Hello")
 
+            // View.snackbar
+            // rootView.snackbar("Hello")
 
-
+            rootView.snackbar("Hello", "OK") {
+                toast("Hello")
+            }
         }
 
         nextButton.setOnClickListener {
