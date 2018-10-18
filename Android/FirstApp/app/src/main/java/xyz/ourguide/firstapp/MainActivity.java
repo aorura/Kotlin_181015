@@ -1,5 +1,6 @@
 package xyz.ourguide.firstapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,31 +34,45 @@ import butterknife.ButterKnife;
 
 // findById의 Boilerplate 없애는 프로젝트 - Butter Knife
 
-//public class MainActivity extends AppCompatActivity {
-//
-//    @BindView(R.id.button_next) Button nextButton;
-//    @BindView(R.id.name_text) TextView nameTextView;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        //---------------------------
-//        ButterKnife.bind(this);
-//        //---------------------------
-//
-////        Button nextButton = findViewById(R.id.button_next);
-////        final TextView nameTextView = findViewById(R.id.name_text);
-//
-//        nextButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                nameTextView.setText("Hello, Android");
-//            }
-//        });
-//
-//    }
-//}
+public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.nextButton)
+    Button nextButton;
+    @BindView(R.id.nameTextView)
+    TextView nameTextView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //---------------------------
+        ButterKnife.bind(this);
+        //---------------------------
+
+//        Button nextButton = findViewById(R.id.button_next);
+//        final TextView nameTextView = findViewById(R.id.name_text);
+
+        /*
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // nameTextView.setText("Hello, Android");
+
+                Intent intent = new Intent(MainActivity.this,
+                        SignInActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        */
+
+        nextButton.setOnClickListener((view) -> {
+            Intent intent = new Intent(this, SignInActivity.class);
+            startActivity(intent);
+        });
+
+    }
+}
 
 
 

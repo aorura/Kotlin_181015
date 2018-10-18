@@ -26,6 +26,12 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    // Java 8 을 안드로이드에서 사용할 수 있도록 하는 설정
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+
 }
 
 dependencies {
