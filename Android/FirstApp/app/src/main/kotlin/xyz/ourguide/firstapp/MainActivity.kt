@@ -17,6 +17,7 @@ import android.widget.Toast
 //  코드에서 쓸 수 있는 이름을 정확하게 지정해야 합니다.
 
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.alert
 import org.jetbrains.anko.design.snackbar
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
@@ -45,6 +46,22 @@ class MainActivity : AppCompatActivity() {
 
 
         testButton.setOnClickListener { _ ->
+
+            // Anko
+            // alert(title = "Title", message = "Hello, Kotlin").show()
+
+            alert(title = "Title", message = "Hello, Kotlin") {
+
+                positiveButton("확인") {
+                    toast("확인")
+                }
+
+                negativeButton("취소") {
+                    toast("취소")
+                }
+
+            }.show()
+
         }
 
         nextButton.setOnClickListener {
