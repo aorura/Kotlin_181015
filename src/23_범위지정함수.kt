@@ -1,12 +1,5 @@
 package ex23
 
-import java.io.IOException
-import java.io.InputStream
-import java.io.OutputStream
-import java.lang.StringBuilder
-import java.net.ServerSocket
-import java.nio.ByteBuffer
-
 // 수신 객체 지정 람다 - 범위 지정 함수
 class User(var email: String?)
 
