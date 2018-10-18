@@ -1,8 +1,11 @@
 package xyz.ourguide.firstapp
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 
 // findByViewId는 필요가 없습니다.
 // kotlin-extensions가 알아서 처리해줍니다.
@@ -13,6 +16,8 @@ import android.support.v7.app.AppCompatActivity
 //  코드에서 쓸 수 있는 이름을 정확하게 지정해야 합니다.
 
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.longToast
+import org.jetbrains.anko.toast
 
 // Kotlin - DSL(Domain Specific Language)
 //   : 도메인 특화 언어
@@ -29,10 +34,42 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 //   Kotlin 1.2
 //    Coroutine - Experimental
+
+fun Context.myToast(message: CharSequence): Toast = Toast.makeText(this,
+        message, Toast.LENGTH_SHORT).apply {
+    show()
+}
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        testButton.setOnClickListener { _ ->
+            // Before Anko
+            // Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show()
+
+            // After Anko
+            // toast("Hello")
+            // longToast("Hello, Long")
+            // myToast("My Toast")
+
+            // Snackbar.make(rootView, "Snackbar", Snackbar.LENGTH_SHORT).show()
+            /*
+            val snackbar = Snackbar.make(rootView, "Snackbar", Snackbar.LENGTH_INDEFINITE)
+            snackbar.setAction("OK") {
+                toast("Hello!!!")
+            }
+            snackbar.show()
+            */
+
+            
+
+
+
+        }
 
         nextButton.setOnClickListener {
             nameTextView.text = "Hello, Android"
