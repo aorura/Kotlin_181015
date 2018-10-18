@@ -44,6 +44,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
 
+    // Anko
+    implementation 'org.jetbrains.anko:anko:0.10.7'
 
     // Unit Test
     testImplementation 'junit:junit:4.12'
