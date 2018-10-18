@@ -36,12 +36,30 @@ import org.jetbrains.anko.toast
 //   Kotlin 1.2
 //    Coroutine - Experimental
 
+
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        testButton.setOnClickListener { _ ->
+        }
+
+        nextButton.setOnClickListener {
+        }
+    }
+}
+
+
+
 fun Context.myToast(message: CharSequence): Toast = Toast.makeText(this,
         message, Toast.LENGTH_SHORT).apply {
     show()
 }
 
-
+/*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,11 +123,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
-
-
-
-
-
-
+*/
 
 
