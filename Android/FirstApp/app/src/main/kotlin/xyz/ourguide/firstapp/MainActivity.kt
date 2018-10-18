@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 
@@ -37,7 +38,6 @@ import org.jetbrains.anko.toast
 //    Coroutine - Experimental
 
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +48,34 @@ class MainActivity : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener {
+            // Java
+            /*
+            val alert = AlertDialog.Builder(this)
+                    .setTitle("Title")
+                    .setMessage("Hello, Kotlin")
+                    .setPositiveButton("확인") { _, _ ->
+                        toast("OK")
+                    }
+                    .create()
+            */
+
+            val alert = AlertDialog.Builder(this).apply {
+
+                setTitle("Title")
+                setMessage("Hello, Kotlin")
+                setPositiveButton("OK") { _, _ ->
+                    toast("OK")
+                }
+
+            }.create()
+
+
+
+
+            alert.show()
         }
     }
 }
-
 
 
 fun Context.myToast(message: CharSequence): Toast = Toast.makeText(this,
