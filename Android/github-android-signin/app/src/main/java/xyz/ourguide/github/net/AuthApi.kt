@@ -7,10 +7,8 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
-import java.util.*
 
 data class AccessTokenBody(
     @field:SerializedName("client_id") val clientId: String,
@@ -23,24 +21,21 @@ data class GithubAccessToken(
     @field:SerializedName("token_type") val tokenType: String
 )
 
-data class GithubUser(
-    val login: String,
-    val id: Int,
-    @field:SerializedName("avatar_url") val avatarUrl: String,
-    val type: String,
-    val name: String,
-    val location: String,
-    val email: String,
-    val company: String?,
-    val bio: String?,
-    @field:SerializedName("public_repos") val publicRepos: Int,
-    val followers: Int,
-    val following: Int,
-    @field:SerializedName("created_at") val createdAt: Date,
-    @field:SerializedName("updated_at") val updatedAt: Date
-)
+//   HTTP      <->   Database
+//   GET              READ
+//   POST             CREATE
+//   PUT              UPDATE
+//   DELETE           DELETE
 
-// github.com
+// OkHttp
+//   Call
+
+// Retrofit
+//   Call
+
+// Retrofit 적용하기
+// 1. Interface 만들기
+// baseUrl("https://github.com/")
 interface AuthApi {
     @POST("login/oauth/access_token")
     @Headers(
@@ -50,13 +45,18 @@ interface AuthApi {
     fun postAccessToken(@Body body: AccessTokenBody): Call<GithubAccessToken>
 }
 
-// api.github.com
-interface GithubApi {
-    @GET("user")
-    fun getUser(): Call<GithubUser>
-}
+// {
+//    "access_token": "8f21827a310bdb36b51e0e84d61b1af7040a5261",
+//    "token_type": "bearer",
+//    "scope": ""
+// }
 
+// 2. client - Singleton
+// object GithubApiProvider {
+// }
 
+// OkHttp Client 설정
+//  => Logging Interceptor
 private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
     addInterceptor(HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -68,6 +68,17 @@ val authApi: AuthApi = Retrofit.Builder().apply {
     client(httpClient)
     addConverterFactory(GsonConverterFactory.create())
 }.build().create(AuthApi::class.java)
+
+// Reflection -> Class
+//    1. AuthApi.class
+//    2. obj.getClass()
+//    3. Class.forName("AuthApi")
+
+// Reflection -> Java's Class / Kotlin's Class
+//    1. AuthApi::class(Kotlin)
+//       AuthApi::class.java(Java)
+
+
 
 
 
