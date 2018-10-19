@@ -5,6 +5,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
+// Github Client
+//  1. OAuth - Login
+//  2. REST API
+//      => OKHttp + Retrofit + Gson + Rx
+
 // 1. Activity Source 추가
 // 2. AndroidManifest.xml 등록
 // 3. Layout 파일 추가
@@ -23,8 +28,6 @@ class SignInActivity : AppCompatActivity() {
             emailEditText.setText(email)
             passwordEditText.setText(password)
         }
-
-
     }
 }
 
