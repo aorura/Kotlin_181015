@@ -78,9 +78,12 @@ class SignInActivity : AppCompatActivity() {
         Log.i(TAG, code)
         // de2cdf1a7070cf1c8936
         // POST
-        //   https://api.github.com/login/oauth/access_token
+        //   https://github.com/login/oauth/access_token
         //   Body - JSON
         //   { "client_id": "", "client_secret": "", "code": "" }
+
+        // Retrofit, OkHttp, Gson
+
 
     }
 }
