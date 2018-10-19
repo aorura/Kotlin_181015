@@ -3,8 +3,11 @@ package xyz.ourguide.github.net
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.util.Log
 import com.google.gson.annotations.SerializedName
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -91,9 +94,37 @@ val authApi: AuthApi = Retrofit.Builder().apply {
 }.build().create(AuthApi::class.java)
 
 
+/*
+val githubApi: GithubApi = Retrofit.Builder().apply {
+    baseUrl("https://api.github.com/")
+    client(OkHttpClient.Builder().apply {
+        addInterceptor(AuthInterceptor())
+    }.build())
+    addConverterFactory(GsonConverterFactory.create())
+}.build().create(GithubApi::class.java)
+*/
 
+fun provideGithubApi(context: Context): GithubApi = Retrofit.Builder().apply {
+    baseUrl("https://api.github.com/")
+    client(OkHttpClient.Builder().apply {
+        addInterceptor(AuthInterceptor(context))
+    }.build())
+    addConverterFactory(GsonConverterFactory.create())
+}.build().create(GithubApi::class.java)
 
+class AuthInterceptor(val context: Context) : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        Log.i("AuthInterceptor", "intercept")
+        val original = chain.request()
 
+        val request = original.newBuilder().apply {
+            val token = GithubAccessToken.load(context)
+            addHeader("Authorization", "bearer $token")
+        }.build()
+
+        return chain.proceed(request)
+    }
+}
 
 
 
