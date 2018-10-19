@@ -49,7 +49,10 @@ class MainActivity : AppCompatActivity() {
         emailTextView.text = user.email
         loginTextView.text = user.login
 
-        // GlideApp.with
+        GlideApp
+            .with(this)
+            .load(user.avatarUrl)
+            .into(avatarImageView)
 
     }
 
