@@ -98,16 +98,17 @@ class SignInActivity : AppCompatActivity() {
         // 비동기
         // Access Token을 응답으로 받아서, 저장해야 합니다.
         //  => Shared Preference
-        call.enqueue(object: Callback<GithubAccessToken> {
+
+        call.enqueue(object : Callback<GithubAccessToken> {
             override fun onFailure(call: Call<GithubAccessToken>, t: Throwable) {
 
             }
 
             override fun onResponse(call: Call<GithubAccessToken>, response: Response<GithubAccessToken>) {
-
+                val token = response.body()
+                token?.save(this)
             }
         })
-
 
 
         // Retrofit Call

@@ -1,5 +1,8 @@
 package xyz.ourguide.github.net
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import com.google.gson.annotations.SerializedName
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,7 +24,22 @@ data class AccessTokenBody(
 data class GithubAccessToken(
     @field:SerializedName("access_token") val accessToken: String,
     @field:SerializedName("token_type") val tokenType: String
-)
+) {
+    companion object {
+        const val ACCESS_TOKEN_KEY = "xyz.ourguide.github.access_token"
+    }
+
+    fun save(context: Context) {
+//        val editor = PreferenceManager.getDefaultSharedPreferences(context).edit()
+//        editor.putString(ACCESS_TOKEN_KEY, accessToken)
+//        editor.apply()
+
+        PreferenceManager.getDefaultSharedPreferences(context)
+            .edit()
+            .putString(ACCESS_TOKEN_KEY, accessToken)
+            .apply()
+    }
+}
 
 data class GithubUser(
     val login: String,
