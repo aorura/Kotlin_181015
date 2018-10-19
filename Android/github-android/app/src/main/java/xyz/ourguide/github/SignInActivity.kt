@@ -83,14 +83,36 @@ class SignInActivity : AppCompatActivity() {
         //   { "client_id": "", "client_secret": "", "code": "" }
 
         // Retrofit, OkHttp, Gson
+        //  OKHttp - Http Client Library
+        //  : 비동기 기반 라이브러리
+        //  => 동기, 비동기 호출 방식을 사용자가 제어할 수 있다.
 
+        //  Retrofit
+        //   : REST API 구현을 할 때 반복되는 코드
+        //   Okhttp API Call
+        //    -> 응답 (JSON)
+        //    -> 모델 객체로 변환 (Gson)
+        //  위의 과정을 어노테이션 기반으로 자동으로 구현되도록
+        //  하는 라이브러리
+
+        // 동기: 요청하면, 결과가 반환된다.
+        // 비동기: 요청하면, 결과를 이후에 처리해야 한다.
+        //   => Callback을 등록해서 결과를 처리한다.
 
     }
 }
 
 
+// a()
+// b()
+// c()
 
-
+// a({
+//    b({
+//        c({
+//        });
+//    });
+// });
 
 
 
