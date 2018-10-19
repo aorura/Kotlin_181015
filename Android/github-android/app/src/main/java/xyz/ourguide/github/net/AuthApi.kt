@@ -62,15 +62,42 @@ data class GithubUser(
     @field:SerializedName("updated_at") val updatedAt: Date
 )
 
-data class RepoSearchResult(
-    @field:SerializedName("total_count") val totalCount: Int,
-    @field:SerializedName("incomplete_results") val incompleteResults: Boolean
+/*
+{
+    "total_count": 1255125,
+    "incomplete_results": false,
+    "items": [
+        {
+            "name": "phonegap-start",
+            "full_name": "phonegap/phonegap-start",
+            "owner": {
+                "login": "phonegap",
+                "avatar_url": "https://avatars0.githubusercontent.com/u/60365?v=4",
+            },
+            "description": "PhoneGap Hello World app",
+        },
+
+    ],
+
+*/
+
+data class Repo(
+    val name: String,
+    @field:SerializedName("full_name") val fullName: String,
+    val owner: Owner,
+    val description: String
 ) {
     data class Owner(
         val login: String,
         @field:SerializedName("avatar_url") val avatarUrl: String
     )
 }
+
+data class RepoSearchResult(
+    @field:SerializedName("total_count") val totalCount: Int,
+    @field:SerializedName("incomplete_results") val incompleteResults: Boolean,
+    val items: List<Repo>
+)
 
 // github.com
 interface AuthApi {
