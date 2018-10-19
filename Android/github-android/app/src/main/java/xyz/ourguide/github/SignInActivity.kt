@@ -51,6 +51,10 @@ class SignInActivity : AppCompatActivity() {
             // 해당 Uri를 브라우저를 통해서 열기
             val intent = CustomTabsIntent.Builder().build()
             intent.launchUrl(this, authUri)
+
+            // 브라우저에서 로그인에 성공하면, hubclient://authorize 로 이동합니다.
+            // => AndroidManifest.xml 에 해당 정보를 추가해야 합니다.
+
         }
 
 
