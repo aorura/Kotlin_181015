@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.support.customtabs.CustomTabsIntent
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -91,8 +92,11 @@ class SignInActivity : AppCompatActivity() {
             )
         )
 
-        call.enqueue {
+        call.enqueue { response ->
+            val token = response.body()
+            token?.save(this)
 
+            startActivity<MainActivity>()
         }
 
         // 동기
@@ -150,7 +154,7 @@ fun <T> Call<T>.enqueue(
     success: (response: Response<T>) -> Unit,
     failure: ((t: Throwable) -> Unit)?
 ) {
-    enqueue(object: Callback<T> {
+    enqueue(object : Callback<T> {
         override fun onFailure(call: Call<T>, t: Throwable) {
             failure?.invoke(t)
         }
