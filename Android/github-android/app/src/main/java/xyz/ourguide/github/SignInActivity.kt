@@ -47,7 +47,7 @@ class SignInActivity : AppCompatActivity() {
             }.build()
 
             toast(authUri.toString())
-            
+
             // 해당 Uri를 브라우저를 통해서 열기
             val intent = CustomTabsIntent.Builder().build()
             intent.launchUrl(this, authUri)
