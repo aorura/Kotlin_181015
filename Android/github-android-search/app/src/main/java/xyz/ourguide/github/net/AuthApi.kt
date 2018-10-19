@@ -5,14 +5,12 @@ import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import android.util.Log
 import com.google.gson.annotations.SerializedName
-import io.reactivex.Observable
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.*
@@ -118,13 +116,6 @@ interface GithubApi {
 
     @GET("search/repositories")
     fun searchRepositories(@Query("q") query: String): Call<RepoSearchResult>
-
-
-    @GET("search/repositories")
-    fun rxSearchRepositories(@Query("q") query: String): Observable<RepoSearchResult>
-
-    @GET("search/repositories")
-    fun foo(@Query("q") query: String): Observable<RepoSearchResult>
 }
 
 private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
@@ -156,10 +147,6 @@ fun provideGithubApi(context: Context): GithubApi = Retrofit.Builder().apply {
         addInterceptor(AuthInterceptor(context))
     }.build())
     addConverterFactory(GsonConverterFactory.create())
-    // RxJava2
-    //  : create()     : 동기 방식
-    //    createAsync(): 비동기 방식
-    addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())
 }.build().create(GithubApi::class.java)
 
 class AuthInterceptor(val context: Context) : Interceptor {
