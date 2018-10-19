@@ -91,6 +91,10 @@ class SignInActivity : AppCompatActivity() {
             )
         )
 
+        call.enqueue {
+
+        }
+
         // 동기
         //  : Main Thread에서는 절대 호출할 수 없습니다.
         // val response = call.execute()
@@ -98,7 +102,7 @@ class SignInActivity : AppCompatActivity() {
         // 비동기
         // Access Token을 응답으로 받아서, 저장해야 합니다.
         //  => Shared Preference
-
+        /*
         call.enqueue(object : Callback<GithubAccessToken> {
             override fun onFailure(call: Call<GithubAccessToken>, t: Throwable) {
 
@@ -106,9 +110,10 @@ class SignInActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<GithubAccessToken>, response: Response<GithubAccessToken>) {
                 val token = response.body()
-                token?.save(this)
+                token?.save(this@SignInActivity)
             }
         })
+        */
 
 
         // Retrofit Call
@@ -141,17 +146,48 @@ class SignInActivity : AppCompatActivity() {
     }
 }
 
+fun <T> Call<T>.enqueue(
+    success: (response: Response<T>) -> Unit,
+    failure: ((t: Throwable) -> Unit)?
+) {
+    enqueue(object: Callback<T> {
+        override fun onFailure(call: Call<T>, t: Throwable) {
+            failure?.invoke(t)
+        }
 
-// a()
-// b()
-// c()
+        override fun onResponse(call: Call<T>, response: Response<T>) {
+            success(response)
+        }
+    })
+}
 
-// a({
-//    b({
-//        c({
-//        });
-//    });
-// });
+fun <T> Call<T>.enqueue(success: (response: Response<T>) -> Unit) {
+    this.enqueue(success, null)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

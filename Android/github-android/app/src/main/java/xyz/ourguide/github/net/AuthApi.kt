@@ -27,6 +27,10 @@ data class GithubAccessToken(
 ) {
     companion object {
         const val ACCESS_TOKEN_KEY = "xyz.ourguide.github.access_token"
+
+        fun load(context: Context): String? =
+            PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(ACCESS_TOKEN_KEY, null)
     }
 
     fun save(context: Context) {
