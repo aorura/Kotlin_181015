@@ -76,6 +76,12 @@ class SignInActivity : AppCompatActivity() {
 
         // code 를 이용해서, github API 서버로부터 AccessToken을 받아 와야 합니다.
         Log.i(TAG, code)
+        // de2cdf1a7070cf1c8936
+        // POST
+        //   https://api.github.com/login/oauth/access_token
+        //   Body - JSON
+        //   { "client_id": "", "client_secret": "", "code": "" }
+
     }
 }
 
