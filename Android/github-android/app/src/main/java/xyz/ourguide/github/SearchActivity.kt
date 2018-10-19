@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 
 // ListView -> RecyclerView
 
-
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

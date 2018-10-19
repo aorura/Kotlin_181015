@@ -12,10 +12,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.util.*
 
 data class AccessTokenBody(
@@ -65,6 +62,16 @@ data class GithubUser(
     @field:SerializedName("updated_at") val updatedAt: Date
 )
 
+data class RepoSearchResult(
+    @field:SerializedName("total_count") val totalCount: Int,
+    @field:SerializedName("incomplete_results") val incompleteResults: Boolean
+) {
+    data class Owner(
+        val login: String,
+        @field:SerializedName("avatar_url") val avatarUrl: String
+    )
+}
+
 // github.com
 interface AuthApi {
     @POST("login/oauth/access_token")
@@ -79,6 +86,9 @@ interface AuthApi {
 interface GithubApi {
     @GET("user")
     fun getUser(): Call<GithubUser>
+
+    @GET("search/repositories")
+    fun searchRepositories(@Query("q") query: String): Call<RepoSearchResult>
 }
 
 private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
