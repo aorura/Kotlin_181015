@@ -96,7 +96,8 @@ class SignInActivity : AppCompatActivity() {
             val token = response.body()
             token?.save(this)
 
-            startActivity<MainActivity>()
+            // startActivity<MainActivity>()
+            startActivity<SearchActivity>()
         }
 
         // 동기
