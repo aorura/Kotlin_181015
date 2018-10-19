@@ -96,6 +96,8 @@ class SignInActivity : AppCompatActivity() {
         // val response = call.execute()
 
         // 비동기
+        // Access Token을 응답으로 받아서, 저장해야 합니다.
+        //  => Shared Preference
         call.enqueue(object: Callback<GithubAccessToken> {
             override fun onFailure(call: Call<GithubAccessToken>, t: Throwable) {
 

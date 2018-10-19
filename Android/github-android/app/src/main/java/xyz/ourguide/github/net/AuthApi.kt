@@ -56,7 +56,6 @@ interface GithubApi {
     fun getUser(): Call<GithubUser>
 }
 
-
 private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
     addInterceptor(HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
