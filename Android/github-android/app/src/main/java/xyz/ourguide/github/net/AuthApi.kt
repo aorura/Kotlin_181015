@@ -1,7 +1,10 @@
 package xyz.ourguide.github.net
 
 import com.google.gson.annotations.SerializedName
+import okhttp3.OkHttpClient
 import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
@@ -46,6 +49,41 @@ interface AuthApi {
 //    "token_type": "bearer",
 //    "scope": ""
 // }
+
+// 2. client - Singleton
+// object GithubApiProvider {
+// }
+
+// OkHttp Client 설정
+private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
+
+}.build()
+
+val authApi: AuthApi = Retrofit.Builder().apply {
+    baseUrl("https://github.com/")
+    client(httpClient)
+    addConverterFactory(GsonConverterFactory.create())
+}.build().create(AuthApi::class.java)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
