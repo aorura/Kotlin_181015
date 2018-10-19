@@ -1,8 +1,10 @@
 package xyz.ourguide.github
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+
+// ListView -> RecyclerView
+
 
 class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
