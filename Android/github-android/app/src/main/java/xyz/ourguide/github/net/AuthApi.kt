@@ -2,6 +2,7 @@ package xyz.ourguide.github.net
 
 import com.google.gson.annotations.SerializedName
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -55,8 +56,11 @@ interface AuthApi {
 // }
 
 // OkHttp Client 설정
+//  => Logging Interceptor
 private val httpClient: OkHttpClient = OkHttpClient.Builder().apply {
-
+    addInterceptor(HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BASIC
+    })
 }.build()
 
 val authApi: AuthApi = Retrofit.Builder().apply {
@@ -65,8 +69,14 @@ val authApi: AuthApi = Retrofit.Builder().apply {
     addConverterFactory(GsonConverterFactory.create())
 }.build().create(AuthApi::class.java)
 
+// Reflection -> Class
+//    1. AuthApi.class
+//    2. obj.getClass()
+//    3. Class.forName("AuthApi")
 
-
+// Reflection -> Java's Class / Kotlin's Class
+//    1. AuthApi::class(Kotlin)
+//       AuthApi::class.java(Java)
 
 
 

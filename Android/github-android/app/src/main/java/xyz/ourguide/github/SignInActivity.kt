@@ -8,6 +8,12 @@ import android.support.customtabs.CustomTabsIntent
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import xyz.ourguide.github.net.AccessTokenBody
+import xyz.ourguide.github.net.GithubAccessToken
+import xyz.ourguide.github.net.authApi
 
 // 1. Serverless
 //   Firebase - Auth, Database, Storage
@@ -76,6 +82,36 @@ class SignInActivity : AppCompatActivity() {
 
         // code 를 이용해서, github API 서버로부터 AccessToken을 받아 와야 합니다.
         Log.i(TAG, code)
+
+        val call: Call<GithubAccessToken> = authApi.postAccessToken(
+            AccessTokenBody(
+                clientId = CLIENT_ID,
+                clientSecret = CLIENT_SECRET,
+                code = code
+            )
+        )
+
+        // 동기
+        //  : Main Thread에서는 절대 호출할 수 없습니다.
+        // val response = call.execute()
+
+        // 비동기
+        call.enqueue(object: Callback<GithubAccessToken> {
+            override fun onFailure(call: Call<GithubAccessToken>, t: Throwable) {
+
+            }
+
+            override fun onResponse(call: Call<GithubAccessToken>, response: Response<GithubAccessToken>) {
+
+            }
+        })
+
+
+
+        // Retrofit Call
+        //  OkHttp  Call + Converter factory(JSON, Protobuf)
+
+
         // de2cdf1a7070cf1c8936
         // POST
         //   https://github.com/login/oauth/access_token
